@@ -6,13 +6,20 @@ public class Coordinate {
 	private double y;
 	
 	public Coordinate() {
-		this.x = 0.0;
-		this.y = 0.0;
+		this.x = Double.NaN;
+		this.y = Double.NaN;
 	}
 	
 	public Coordinate(double x, double y) {
 		this.x = x;
 		this.y = y;
+	}
+	
+	public boolean isEmpty() {
+		if ( Double.isNaN(this.getX()) || Double.isNaN(this.getY())) {
+			return true;
+		}
+		else return false;
 	}
 
 	public double getX() {

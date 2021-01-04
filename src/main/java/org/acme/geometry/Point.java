@@ -12,13 +12,23 @@ public class Point implements Geometry {
 		this.coordinate = coordinate;
 	}
 	
+	public Coordinate getCoordinate() {
+		return coordinate;
+	}
+
+	
 	@Override
 	public String getType() {
 		return "Point";
 	}
-
-	public Coordinate getCoordinate() {
-		return coordinate;
+	
+	@Override
+	public boolean isEmpty() {
+		if ( Double.isNaN(this.getCoordinate().getX()) || Double.isNaN(this.getCoordinate().getY())) {
+			return true;
+		}
+		else return false;
 	}
+
 
 }

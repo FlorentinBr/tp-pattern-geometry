@@ -11,7 +11,7 @@ public class PointTest {
 	public void testType(){
 		// TODO
 		Point p = new Point();
-		Assert.assertEquals("Point", p.getType(), EPSILON);
+		Assert.assertEquals("Point", p.getType());
 	}
 
 }

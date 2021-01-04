@@ -37,5 +37,16 @@ public class LineStringTest {
         LineString l = new LineString();
         Assert.assertEquals("LineString",l.getType());
     }
+    @Test
+    public void testTranslate() {
+        Coordinate c = new Coordinate(3.0,4.0);
+        Point p = new Point(c);
+        ArrayList<Point> lp = new ArrayList<Point>();
+        lp.add(p);
+        LineString l = new LineString(lp);
+        l.translate(1.0,1.0);
+        Assert.assertEquals(4.0,l.getPointN(0).getCoordinate().getX(), EPSILON);
+        Assert.assertEquals(5.0,l.getPointN(0).getCoordinate().getY(), EPSILON);
+    }
 
 }

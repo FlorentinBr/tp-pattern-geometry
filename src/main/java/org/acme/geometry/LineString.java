@@ -44,4 +44,9 @@ public class LineString implements Geometry {
 	    	this.points.get(i).translate(dx,dy);
 	    }
     }
+	
+	@Override
+    public LineString clone() {
+        return new LineString(this.points);
+    }
 }

@@ -54,15 +54,6 @@ public class LineString extends AbstractGeometry {
         return new LineString(newLine);
     }
 
-	@Override
-	public Envelope getEnvelope() {
-		EnvelopeBuilder builder = new EnvelopeBuilder();
-		for(Point pt : this.points) {
-			builder.insert(pt.getCoordinate());
-		}
-		Envelope result = builder.build();
-		return result;
-	}
 
 	@Override
 	public void accept(GeometryVisitor visitor) {

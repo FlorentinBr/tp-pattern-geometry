@@ -2,7 +2,7 @@ package org.acme.geometry;
 import java.util.List;
 import java.util.ArrayList;
 
-public class LineString implements Geometry {
+public class LineString extends AbstractGeometry {
 	
 	private List<Point> points;
 	
@@ -66,6 +66,11 @@ public class LineString implements Geometry {
 
 	@Override
 	public void accept(GeometryVisitor visitor) {
+		visitor.visit(this);
+	}
+
+	@Override
+	public void accept(WktVisitor visitor) {
 		visitor.visit(this);
 	}
 }

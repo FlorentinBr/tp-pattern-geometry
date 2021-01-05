@@ -22,5 +22,11 @@ public class PointTest {
         Assert.assertEquals(3.0,a.getEnvelope().getBottomLeft().getX(), EPSILON);
         Assert.assertEquals(4.0,a.getEnvelope().getBottomLeft().getY(), EPSILON);
     }
+	
+	@Test
+	public void testAsText() {
+		Point a = SampleFactory.createPointA();
+		Assert.assertEquals("POINT(3.0 4.0)",a.asText());
+	}
 
 }

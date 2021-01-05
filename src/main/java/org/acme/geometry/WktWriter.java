@@ -35,5 +35,4 @@ public class WktWriter {
 		    throw new RuntimeException("geometry type not supported");
 		}
 	}
-
 }

@@ -12,5 +12,4 @@ public class LogGeometryVisitorTest {
         Geometry geometryLine = SampleFactory.createLineStringOA();
         geometryLine.accept(visitor);
     }
-
 }

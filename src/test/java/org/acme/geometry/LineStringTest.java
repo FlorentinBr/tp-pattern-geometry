@@ -57,5 +57,12 @@ public class LineStringTest {
         Assert.assertEquals(0.0,oa.getEnvelope().getBottomLeft().getX(), EPSILON);
         Assert.assertEquals(1.0,oa.getEnvelope().getBottomLeft().getY(), EPSILON);
     }
+    
+    
+    @Test
+    public void testAsText(){
+        LineString a = SampleFactory.createLineStringOA();
+        Assert.assertEquals("LINESTRING(0.0 1.0,3.0 4.0)",a.asText());
+    }
 
 }

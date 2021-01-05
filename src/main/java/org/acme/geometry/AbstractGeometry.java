@@ -1,6 +1,11 @@
 package org.acme.geometry;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public abstract class AbstractGeometry implements Geometry {
+	
+	private List<GeometryListener> listeners = new ArrayList<GeometryListener>();
 
 
 	@Override
@@ -19,4 +24,19 @@ public abstract class AbstractGeometry implements Geometry {
         accept(builder);
         return builder.build();
     }
+	
+	protected void triggerChange() {
+        for(int i = 0; i < this.listeners.size(); i++) {
+            this.listeners.get(i).onChange(this);
+        }
+    }
+
+	public List<GeometryListener> getListeners() {
+		return listeners;
+	}
+	
+	public void addListener(GeometryListener listener) {
+		this.getListeners().add(listener);
+	}
+	
 }

@@ -21,6 +21,6 @@ public class SampleFactory {
     
     LineString oa = SampleFactory.createLineStringOA();
 	public static Envelope createEnvelopeOA() {
-	        return new Envelope(new Coordinate(0.0,0.0),new Coordinate(3.0,4.0));
+	        return new Envelope(new Coordinate(0.0,1.0),new Coordinate(3.0,4.0));
 	    }
 }
